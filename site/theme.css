@@ -1,0 +1,95 @@
+@charset "UTF-8";
+/* ★ 修改主题色只需要先改这里。其余是页面布局，不熟悉时先保留。 */
+:root{
+  --paper:#fffaf3;--ink:#294e80;--muted:#5c7094;--accent:#466ba9;
+  --line:#d8ddec;--sage:#7082ad;--white:#fffdf9;
+  --sky-top:#293d69;--sky-middle:#9294ba;--sky-pink:#e7b1aa;
+  --button-start:#385f9c;--button-end:#829acc;
+  --shadow:0 18px 55px #6f587015;
+}
+body{background:linear-gradient(180deg,var(--sky-top) 0,#616f99 330px,var(--sky-middle) 700px,var(--sky-pink) 1100px,#f5ded0 1500px,#fffaf3 1900px);min-height:100vh;color:var(--ink);isolation:isolate}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(circle,#fff5 1px,transparent 2px);background-size:48px 48px;mask-image:linear-gradient(#0008,transparent);z-index:-1}
+body[data-stage="0"] #journey{display:none}
+body[data-stage="0"] main{max-width:1040px}
+body:not([data-stage="0"]){background:linear-gradient(180deg,var(--sky-top),var(--sky-middle) 330px,var(--sky-pink) 730px,#fff9f0 1250px)}
+.topbar{max-width:1120px;color:#fff;padding-top:22px}
+.brand{font-size:17px}.brand small{color:#d5dced}.brand-icon{background:#ffffff0c;color:#f8e4df;border-color:#b9c7df8c}
+.topbar .text-button{color:#f2f0f7}.header-note{color:#d5dced}.header-note i{color:#f5c2c4}
+#journey{margin-top:18px}.step{color:#f3f3fd}.step i{border-color:#e4e9fc6b}.step[aria-current]{color:white}.step[aria-current] i{background:#fff6ec;color:#3f5f91;border-color:#fff5ec}.step.done i{color:#eef2ff;border-color:#e2e9f5}
+.poster-hero{max-width:900px;margin:10px auto 0;text-align:center;padding:25px 0 0}
+.poster-edition{color:#fff;font-family:Georgia,serif;font-size:14px;letter-spacing:.23em;margin:4px 0 29px}
+.poster-title{font-family:"SimSun","Songti SC",serif;font-size:clamp(42px,7vw,76px);line-height:1.17;color:#fff;font-weight:800;letter-spacing:.06em;margin:0 0 17px;text-shadow:0 4px 20px #24345914}
+.poster-tagline{color:#fff;font-size:clamp(15px,2.4vw,23px);font-weight:700;letter-spacing:.03em;margin:0}
+.poster-object{width:min(430px,75%);height:auto;display:block;margin:12px auto -12px;filter:drop-shadow(0 15px 8px #5e536329)}
+.welcome-letter{max-width:800px;margin:0 auto;background:#fffdf8f5;border:1px solid #fff;border-radius:30px;padding:40px 43px 32px;text-align:left;box-shadow:0 25px 50px #886c7020}
+.welcome-letter .eyebrow{color:#7186b0;font-size:12px;font-weight:400;letter-spacing:.13em;margin:0 0 4px}
+.welcome-letter h2{font-family:"Microsoft YaHei","PingFang SC",sans-serif;font-size:30px;font-weight:800;color:#315c98;margin:0 0 18px;line-height:1.4}
+.welcome-letter>p{font-size:15px;line-height:1.95;margin:0 0 6px;color:#526d99}
+.welcome-letter .letter-detail{color:#697d9c;font-size:13px}
+.welcome-letter .actions{margin:25px 0 17px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.primary{background:linear-gradient(100deg,var(--button-start),var(--button-end));border-radius:10px;box-shadow:none}
+.primary:hover{background:linear-gradient(100deg,#30548e,#718abe)}.secondary{background:#f4f5fb;color:#496a9e;border-color:#d3ddef;border-radius:10px}
+.welcome-letter .primary{font-size:16px;min-height:58px}.welcome-letter .secondary{font-size:14px}
+.welcome-letter .join-help{font-size:12px;line-height:1.9;color:#7082a3;margin-top:12px}
+.poster-footer{text-align:center;color:var(--muted);font-size:12px;line-height:1.9;margin:29px 0 18px}.poster-footer span{font:13px Georgia,serif;display:block;letter-spacing:.08em;margin-bottom:4px}
+.panel{background:#fffdf9f7;border-color:#ffffffbd;border-radius:24px;margin-top:22px;padding:35px 38px}.panel-head h1{font-family:"Microsoft YaHei","PingFang SC",sans-serif;font-weight:800}
+.guide-note,.form-info{background:#f0f1fa;color:#60759a;border-color:#afbedb}
+.choice{background:#fffdfa;border-color:#d8dfed;border-radius:12px}.choice:hover{background:#f1f4ff;border-color:#9baed2}.choice[aria-pressed=true]{background:#eaf0fd;border-color:#718dbd;box-shadow:inset 0 0 0 1px #718dbd}
+.symbol{color:#5876ab}.check{color:#426398;border-color:#a5b8d9}
+input:not([type=checkbox]),select{background:#fffefa;border-color:#cbd6e8;border-radius:8px;color:#355581}
+.status-chip{background:#e6edf9;color:#41608d}
+.identity{background:linear-gradient(125deg,#e9edfc,#f9ded4);border-color:#bdc8e0;border-radius:18px}.identity:before{color:#c18ba83b}
+.card-top,.card-foot,.card-detail{color:#62759b}.card-tags span{border-color:#b5c2dc}.card-foot{border-color:#afbbd5}
+.poll-results{background:#f9f9fe;border-color:#d7dfed;border-radius:12px}
+.notice{background:#f3f4fb;border-color:#d6def0;border-radius:10px}
+footer{max-width:950px;border-color:#8e9cb84d;color:var(--muted)}footer a:hover{text-decoration:underline}dialog{border-color:#d8dff0;border-radius:20px;background:#fffdf8}#toast{background:#354e7b}
+.admin-main{max-width:1180px!important}.admin-heading{color:#fff}.admin-heading h1 em{color:#e3e9ff}.admin-heading .eyebrow{color:#c9d5ee}.admin-login h1{font-size:31px}
+.stats .stat,.admin-charts article{background:#fffdf8f7;border-color:#ffffffb3;border-radius:16px}table{background:#fffdf9}th{background:#e6ecf9;color:#44618e}td,th{border-color:#e0e5f0}.table-wrap{border-color:#fff;border-radius:12px}.export-note,.admin-main>.hint{background:#fffdf9e8;color:#50668d;padding:12px 15px;border-radius:10px}.pager{color:#fff}
+@media(min-width:701px){body[data-stage="0"]{background:radial-gradient(ellipse at 94% 28%,#ffe3b67a,transparent 31%),linear-gradient(180deg,var(--sky-top),var(--sky-middle) 330px,var(--sky-pink) 700px,#f6ddd0 1100px,#fffaf3 1450px)}.poster-object{margin-top:8px;margin-bottom:-10px}body[data-stage="0"] .topbar{padding-bottom:6px}}
+@media(max-width:700px){
+body{background:radial-gradient(ellipse at 94% 29%,#ffe3b67a,transparent 31%),linear-gradient(180deg,var(--sky-top) 0,var(--sky-middle) 260px,var(--sky-pink) 550px,#f5e1d2 900px,#fffaf3 1250px)}
+.topbar{padding:17px 18px 12px}.brand{font-size:14px}.brand small{font-size:6px}.brand-icon{width:31px;height:31px;font-size:16px}
+.poster-hero{padding:22px 0 0;margin-top:0}.poster-edition{font-size:10px;letter-spacing:.19em;margin-bottom:25px}.poster-title{font-size:clamp(40px,12vw,60px);line-height:1.19;margin-bottom:16px;letter-spacing:.045em}
+.poster-tagline{font-size:16px}.poster-object{width:90%;max-width:365px;margin:16px auto -5px}
+.welcome-letter{padding:28px 24px 25px;border-radius:25px;margin:0 1px}.welcome-letter .eyebrow{font-size:10px}
+.welcome-letter h2{font-size:25px;margin-bottom:17px}.welcome-letter>p{font-size:13px;line-height:2}.welcome-letter .letter-detail{font-size:12px}
+.welcome-letter .actions{grid-template-columns:1fr;margin:21px 0 13px;gap:10px}.welcome-letter .primary{font-size:15px;min-height:53px}.welcome-letter .secondary{font-size:13px;min-height:47px}.welcome-letter .join-help{font-size:10px}
+.poster-footer{font-size:10px;margin-top:24px}.poster-footer span{font-size:11px}
+.panel{padding:27px 18px;border-radius:22px}.panel-head h1{font-size:28px}.identity{padding:22px 18px}
+footer{margin-top:25px;font-size:9px;color:#536d98;border-color:#8e9cb84d}
+.admin-heading h1{font-size:25px}.admin-heading .secondary{padding:10px 12px}.admin-charts article{padding:17px}
+}
+
+/* 2026-10-18：学校页眉、简洁首页、后台批量选择 */
+.school-emblem{width:52px;height:52px;flex-shrink:0;object-fit:contain;border-radius:50%;background:#fff;padding:3px;box-shadow:0 2px 12px #24375b1a}
+.brand-copy{min-width:0}.brand-name{font-size:17px;letter-spacing:.03em;font-weight:700}.brand-club{font-size:14px;letter-spacing:.02em}.brand small{font-size:8px}
+.poster-hero .welcome-letter{margin-top:49px}.welcome-letter .actions{grid-template-columns:1fr;max-width:560px;margin-left:auto;margin-right:auto}
+.danger-button{background:#fff1f1;border:1px solid #dca9ad;border-radius:10px;color:#a13744;font-size:12px;font-weight:600;min-height:48px;padding:12px 17px}
+.danger-button:hover:not(:disabled){background:#ffe3e6}
+.selection-note{background:#fffdf9e8;padding:9px 14px;border-radius:9px;font-size:11px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;color:#526a95}
+.selection-note #selection-count{font-weight:600}
+.selection-cell{width:44px;text-align:center;padding:12px 8px}
+.selection-cell input{width:17px;height:17px;accent-color:var(--accent);vertical-align:middle;cursor:pointer}
+@media(max-width:1050px){.header-note{display:none}.brand-name{font-size:15px}.brand-club{font-size:12px}}
+@media(max-width:700px){.school-emblem{width:43px;height:43px;padding:2px}.brand{gap:8px}.brand-name{font-size:13px;line-height:1.55}.brand-club{display:block;font-size:11px}.brand small{font-size:6px;letter-spacing:.06em}.poster-hero .welcome-letter{margin-top:34px}.topbar{align-items:center}.topbar nav{flex-shrink:0}.topbar>.text-button{font-size:9px}.selection-note{gap:4px 10px}.danger-button{min-height:44px;padding:10px 13px}}
+
+#delete-confirm{max-width:500px;width:calc(100% - 36px)}#delete-confirm h2{margin-top:14px}#delete-confirm-message{white-space:pre-line}#delete-confirm .actions{justify-content:flex-end;gap:10px}#delete-confirm .danger-button{background:#a23e4c;color:white;border-color:#a23e4c}
+
+/* 社群入口：每个群独立操作，移动端纵向排列。 */
+.community-groups{display:grid;gap:18px;margin:26px 0;text-align:left}.community-group{padding:24px;border:1px solid #d8def0;border-radius:22px;background:#fffdfa}.community-group h2{font-size:clamp(21px,3vw,28px);margin:10px 0}.community-group .actions{margin-top:18px}.community-group p{margin:8px 0}
+
+/* 保留二维码原图；白色静区与装饰边框分离，避免影响识别。 */
+.community-group{background:linear-gradient(155deg,#fffdfa,#faf7ff);padding:28px;position:relative;overflow:hidden}
+.community-group:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(#8099c7,#eebbb7)}
+.community-qr{margin:24px auto 18px;text-align:center;max-width:330px}
+.qr-frame{position:relative;isolation:isolate;border:1px solid #c9cde7;border-radius:24px;background:linear-gradient(145deg,#e9edff 0%,#fbebe6 90%);padding:35px 18px 17px;box-shadow:0 10px 26px #485b8512,inset 0 0 0 5px #ffffffa6}
+.qr-frame:before,.qr-frame:after{content:"✦";position:absolute;top:13px;color:#9baacc;font-size:14px}.qr-frame:before{left:15px}.qr-frame:after{right:15px;color:#dba6ac}
+.qr-frame-label{position:absolute;top:-10px;left:50%;transform:translateX(-50%);white-space:nowrap;background:#fffaf6;border:1px solid #d5d8ea;border-radius:20px;padding:3px 16px;font-size:9px;letter-spacing:.2em;color:#697ea6;font-weight:700}
+.qr-paper{background:#fff;padding:24px;border:1px solid #e3e5ef;border-radius:16px;box-shadow:0 3px 12px #596a8610}
+.qr-paper img{display:block;width:100%;height:auto;aspect-ratio:1;max-width:226px;margin:auto;image-rendering:pixelated;border-radius:0;background:#fff}
+.qr-frame-note{display:block;margin-top:14px;color:#6c79a1;font-size:11px;letter-spacing:.1em}
+.community-qr figcaption{font-size:12px;line-height:1.9;color:#6f81a5;margin:15px 3px 8px}.qr-save{display:inline-block;font-size:12px;color:#3b5d91;text-decoration:underline;text-underline-offset:4px;padding:4px 8px}
+.community-group>.actions{justify-content:center}.community-group>.actions>.primary{flex:1}
+@media(max-width:700px){.community-group{padding:25px 17px}.community-qr{max-width:310px}.qr-frame{padding:32px 13px 15px}.qr-paper{padding:22px}.community-group>.actions{align-items:stretch}.community-group>.actions>.primary{flex:auto}.qr-frame-note{font-size:10px}}
+
+.join-box{max-width:940px}.community-group{min-width:0}@media(min-width:900px){.community-groups{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}}

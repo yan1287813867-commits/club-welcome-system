@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS signups (
+ id VARCHAR(12) PRIMARY KEY, token_hash CHAR(64) UNIQUE NOT NULL,
+ payload_hash CHAR(64) NOT NULL, name VARCHAR(80) NOT NULL,
+ major VARCHAR(160) NOT NULL, year VARCHAR(20) NOT NULL,
+ qq VARCHAR(12) NOT NULL, interests TEXT NOT NULL,
+ consent_version VARCHAR(40) NOT NULL, created_at BIGINT NOT NULL,
+ INDEX idx_signups_created(created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+CREATE TABLE IF NOT EXISTS votes (
+ signup_id VARCHAR(12) PRIMARY KEY, choice VARCHAR(40) NOT NULL, updated_at BIGINT NOT NULL,
+ FOREIGN KEY(signup_id) REFERENCES signups(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+CREATE TABLE IF NOT EXISTS sessions (
+ token_hash CHAR(64) PRIMARY KEY, csrf VARCHAR(128) NOT NULL, expires BIGINT NOT NULL,
+ INDEX idx_sessions_expires(expires)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+CREATE TABLE IF NOT EXISTS limits (
+ `key` CHAR(64) PRIMARY KEY, count INT NOT NULL, expires BIGINT NOT NULL,
+ INDEX idx_limits_expires(expires)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
